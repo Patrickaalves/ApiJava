@@ -1,5 +1,8 @@
 package br.com.patrick.minhasfinancas.model.entity;
 
+import br.com.patrick.minhasfinancas.model.enums.StatusLancamento;
+import br.com.patrick.minhasfinancas.model.enums.TipoLancamento;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -10,8 +13,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
-@EqualsAndHashCode
-@ToString
+@Builder
 
 @Entity
 @Table(name = "lancamento", schema = "financas")
@@ -39,6 +41,6 @@ public class Lancamento {
     private TipoLancamento tipo;
     @Column(name = "status")
     @Enumerated(value = EnumType.STRING)
-    private  StatusLancamento status;
+    private StatusLancamento status;
 
 }

@@ -5,16 +5,16 @@ import lombok.*;
 import javax.persistence.*;
 
 //@AllArgsConstructor
-@Data
-@EqualsAndHashCode
-@ToString
-
 @Entity
-@Table(name = "usuario", schema = "financas")
+@Table( name = "usuario" , schema = "financas")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "nome")
     private  String nome;
@@ -22,8 +22,6 @@ public class Usuario {
     private  String email;
     @Column(name = "senha")
     private  String senha;
-
-
 
 
 }
